@@ -1,0 +1,87 @@
+填空：
+int ms(char *str){
+	int i;
+	for(i=0;str[i]!='\0';i++);
+	return i;
+}
+
+
+编程题：
+#include <stdio.h>
+
+int main(){
+	
+	int a[3],t;
+	
+	scanf("%d%d%d",&a[0],&a[1],&a[2]);
+	int n=2;
+	while(n--){
+		for(int i=0;i<2;i++)
+		{
+			if(a[i+1]<a[i]){
+				t=a[i];
+				a[i]=a[i+1];
+				a[i+1]=t;
+			}
+		}
+	}
+  	
+	printf("%d%d%d",a[0],a[1],a[2]);
+
+	return 0;
+} 
+
+//注意二维数组的赋值方式
+
+#include <stdio.h>
+
+int main(){
+	
+	int n[5][5] ={{1,2,0,4,-1},
+				 {1,2,0,4,-1},
+				  {1,2,0,4,-1},
+				  {1,2,0,4,-1},
+				  {1,2,0,4,-1}};
+	int i,j,z=0,f=0,l=0;		  
+	for(i=0;i<5;i++){
+		for(j=0;j<5;j++){
+			if(n[i][j]>0){
+				++z;
+			}else if(n[i][j]==0){
+				++l;
+			}else{
+				++f;
+			}
+		}
+	}
+	
+	printf("正数:%d个，负数:%d个，零:%d个，",z,f,l);
+
+	return 0;
+} 
+
+
+
+第三题核心
+#include <stdio.h>
+
+int main(){
+	
+	struct stu{
+		int num;
+		char name[20];
+		double  chenji;
+	};
+	
+	stu all[10];  
+	int i;
+	for(i=0;i<1;i++){
+	scanf("%d%s%lf",&all[i].num,&all[i].name,&all[i].chenji); 
+	}
+	
+	for(i=0;i<10;i++){
+		printf("%d  %s  %lf\n",all[i].num,all[i].name,all[i].chenji); 
+	}
+
+	return 0;
+} 
